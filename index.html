@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Serena 💜</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(135deg, #000000, #0d1b2a, #1b263b, #6a0dad);
+  color: #ffffff;
+  text-align: center;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+}
+
+/* 🎉 TITLE */
+h1 {
+  font-size: clamp(1.5em, 8vw, 4em);
+  margin-top: 20px;
+  animation: bounce 1.5s infinite;
+  text-shadow: 
+    0 0 5px #d6a3ff,
+    0 0 10px #b266ff,
+    0 0 20px #9933ff,
+    0 0 40px #cc99ff;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 💌 MESSAGE */
+.message, .hidden-message {
+  margin: 12px auto;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(178,102,255,0.4);
+  font-size: clamp(1em, 4vw, 1.25em);
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 15px;
+  color: #e6ccff;
+  text-shadow:
+    0 0 8px #b266ff,
+    0 0 15px #d6a3ff;
+}
+
+/* 🎀 BUTTON */
+.reveal-btn {
+  background: linear-gradient(145deg, #b266ff, #d6a3ff, #ffccff);
+  color: black;
+  padding: 14px 24px;
+  border-radius: 25px;
+  margin: 16px auto;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.reveal-btn:hover {
+  transform: scale(1.05);
+}
+
+/* 🎵 AUDIO */
+audio {
+  margin: 50px auto;
+  display: block;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* 🐱 GIFS */
+.gif, .wassup, .small-gif {
+  display: block;
+  margin: 10px auto;
+  border-radius: 12px;
+  max-width: 90%;
+}
+
+.small-gif {
+  width: 50%;
+  max-width: 180px;
+  animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ✨ SPARKLES */
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 14px;
+  animation: sparkleFade 0.8s forwards;
+}
+
+@keyframes sparkleFade {
+  to {
+    opacity: 0;
+    transform: translateY(-12px) rotate(20deg) scale(1.6);
+  }
+}
+/* 🦋 BUTTERFLIES */
+.butterfly {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  filter: drop-shadow(0 0 10px #b266ff);
+  animation: drift linear forwards, fade linear forwards;
+}
+
+/* 🌙 gentle drifting path */
+@keyframes drift {
+  0%   { transform: translateY(110vh) translateX(0px) rotate(0deg); }
+  25%  { transform: translateY(80vh)  translateX(40px) rotate(6deg); }
+  50%  { transform: translateY(50vh)  translateX(-50px) rotate(-8deg); }
+  75%  { transform: translateY(20vh)  translateX(30px) rotate(5deg); }
+  100% { transform: translateY(-15vh) translateX(-40px) rotate(-6deg); }
+}
+
+/* ✨ fade in/out */
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Serena 💜 🎉</h1>
+
+<div class="message">
+You light up every room you walk into.<br><br>
+Never forget how incredibly special you are.<br><br>
+Here's to YOU — today and every day 💫<br><br>
+The world is so much brighter with you in it 🌟
+</div>
+
+<img class="HBD" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3MzYzMzZ3dxd2Y2bDVkZHNwdHZnNGM5ZXkxdzB1NWFweDhtNHU5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NrN9hmYjAqOqRKf2m0/giphy.gif">
+
+<h2>🦋 chaotic cute energy 🦋</h2>
+
+<img class="small-gif" src="https://media.tenor.com/Wsg-Kz8w24gAAAAi/frugitofficial-frugit.gif">
+<img class="gif" src="https://media.tenor.com/SsPt6Ko9mnAAAAAd/cat-cute-cat.gif">
+<img class="gif" src="https://media.giphy.com/media/3o7528JmqtT7cwzV1S/giphy.gif">
+<img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmR5bmkzM2RwcnV6bXdva3JjMXVqaHJwaGxodms5bWJncnVlZHVxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vqMwxrSSVDDjuEupve/giphy.gif">
+
+<!-- 🎵 MUSIC -->
+<audio id="song" controls>
+  <source src="snowball_effect.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💜 BUTTON -->
+<div class="reveal-btn" onclick="startReveal()">
+click me… I have something for you 💜
+</div>
+
+<div class="hidden-message" id="secret"></div>
+
+<script>
+let revealed = false;
+
+/* 💌 POEM */
+const text = `so if the night feels heavy,
+if it presses in too close,
+just remember…
+
+there is a kind of light
+that is only discovered in the dark.
+
+like a star—
+from afar,
+it is the darkness that lets it be seen at all.
+
+the stars were made for this.
+they don’t fight the night;
+their beauty exists because of it.
+
+and maybe,
+just maybe…
+so do you ✨`;
+
+const sparkleTypes = ["✨","💫","⭐","🌟"];
+let lastSparkle = 0;
+
+/* ✨ CREATE SPARKLE */
+function createSparkle(x, y) {
+  let now = Date.now();
+  if (now - lastSparkle < 30) return;
+  lastSparkle = now;
+
+  let s = document.createElement("div");
+  s.className = "sparkle";
+  s.innerHTML = sparkleTypes[Math.floor(Math.random() * sparkleTypes.length)];
+  s.style.left = x + "px";
+  s.style.top = y + "px";
+
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 800);
+}
+
+/* ✨ CURSOR */
+document.addEventListener("mousemove", e => {
+  createSparkle(e.pageX, e.pageY);
+});
+
+/* ✨ TEXT SPARKLES */
+function createTextSparkle(el) {
+  const rect = el.getBoundingClientRect();
+  createSparkle(
+    rect.left + Math.random() * rect.width,
+    rect.top + Math.random() * rect.height
+  );
+}
+
+/* 💜 REVEAL */
+function startReveal() {
+  if (revealed) return;
+  revealed = true;
+
+  const el = document.getElementById("secret");
+  el.style.display = "block";
+
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+      createTextSparkle(el);
+      i++;
+      setTimeout(type, 28);
+    }
+  }
+  type();
+
+  fadeInAudio();
+}
+
+/* 🎵 MUSIC */
+function fadeInAudio() {
+  const audio = document.getElementById("song");
+  audio.volume = 0;
+  audio.play();
+
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 1) {
+      vol += 0.05;
+      audio.volume = vol;
+    } else clearInterval(fade);
+  }, 200);
+}
+
+/* 🦋 BUTTERFLIES */
+const gifs=[
+"https://media.tenor.com/z0pgDo6jFxYAAAAi/borboletas-butterflies.gif",
+"https://media.tenor.com/U2JgCHsRh04AAAAi/butterfly-blue.gif",
+"https://media.tenor.com/PZQ4rP77gpgAAAAj/borboletas-butterfly.gif",
+"https://media.tenor.com/U2JgCHsRh04AAAAj/butterfly-blue.gif",
+"https://media.tenor.com/1sxf4drjiDwAAAAj/borboletas-butterflies.gif"
+];
+
+function butterfly(){
+ let b=document.createElement("img");
+ b.className="butterfly";
+ b.src=gifs[Math.floor(Math.random()*gifs.length)];
+
+ /* 🌙 START INSIDE SCREEN (FIX) */
+  b.style.left = Math.random() * window.innerWidth + "px";
+  b.style.top = (window.innerHeight * (0.6 + Math.random() * 0.4)) + "px";
+
+  /* 💜 BIGGER SIZE */
+  let size = 50 + Math.random() * 30;
+
+  /* 🌟 foreground butterfly */
+  if (Math.random() < 0.25) {
+    size *= 1.6;
+    b.style.zIndex = 6;
+ }
+
+ b.style.width=size+"px";
+ b.style.left=Math.random()*window.innerWidth+"px";
+
+ /* 🌙 slow dreamy timing */
+ let dur=14+Math.random()*10;
+ b.style.animationDuration=dur+"s, "+dur+"s";
+
+ document.body.appendChild(b);
+ setTimeout(()=>b.remove(),dur*1000);
+}
+
+/* 💜 CLUSTER AROUND MESSAGE */
+function clusterButterflies() {
+  const el = document.getElementById("secret");
+  const rect = el.getBoundingClientRect();
+
+  for (let i = 0; i < 12; i++) {
+    setTimeout(() => {
+      let b = document.createElement("img");
+      b.className = "butterfly";
+      b.src = gifs[Math.floor(Math.random() * gifs.length)];
+
+      let size = 100 + Math.random() * 60;
+      b.style.width = size + "px";
+
+      /* 🎯 spawn near message */
+      b.style.left = rect.left + Math.random() * rect.width + "px";
+      b.style.top = rect.top + rect.height + 50 + "px";
+
+      let dur = 18 + Math.random() * 10;
+      b.style.animationDuration = dur + "s, " + dur + "s";
+
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), dur * 1000);
+    }, i * 200);
+  }
+}
+
+/* 🌌 NORMAL FLOATING */
+function ambientButterflies() {
+  butterfly();
+}
+
+function clusterButterflies() {
+  butterfly();
+}
+
+/* 🦋 spawn immediately */
+for(let i=0;i<5;i++){
+ setTimeout(butterfly,i*400);
+}
+
+/* 🦋 continuous gentle flow */
+setInterval(butterfly,3500);
+
+</script>
+
+</body>
+</html>
