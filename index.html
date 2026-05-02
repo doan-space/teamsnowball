@@ -127,11 +127,11 @@ audio {
 
 /* 🌙 gentle drifting path */
 @keyframes drift {
-  0%   { transform: translateY(110vh) translateX(0px) rotate(0deg); }
-  25%  { transform: translateY(80vh)  translateX(40px) rotate(6deg); }
-  50%  { transform: translateY(50vh)  translateX(-50px) rotate(-8deg); }
-  75%  { transform: translateY(20vh)  translateX(30px) rotate(5deg); }
-  100% { transform: translateY(-15vh) translateX(-40px) rotate(-6deg); }
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  25%  { transform: translate(40px, -60px) rotate(6deg); }
+  50%  { transform: translate(-50px, -120px) rotate(-8deg); }
+  75%  { transform: translate(30px, -180px) rotate(5deg); }
+  100% { transform: translate(-40px, -260px) rotate(-6deg); }
 }
 
 /* ✨ fade in/out */
@@ -300,8 +300,15 @@ function butterfly(){
  b.src=gifs[Math.floor(Math.random()*gifs.length)];
 
  /* 🌙 START INSIDE SCREEN (FIX) */
+  if (Math.random() < 0.5) {
+  // bottom spawn
   b.style.left = Math.random() * window.innerWidth + "px";
-  b.style.top = (window.innerHeight * (0.6 + Math.random() * 0.4)) + "px";
+  b.style.top = window.innerHeight + "px";
+} else {
+  // random spawn
+  b.style.left = Math.random() * window.innerWidth + "px";
+  b.style.top = Math.random() * window.innerHeight + "px";
+}
 
   /* 💜 BIGGER SIZE */
   let size = 50 + Math.random() * 30;
