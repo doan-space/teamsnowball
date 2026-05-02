@@ -18,7 +18,7 @@ body {
 
 /* 🎉 TITLE */
 h1 {
-  font-size: clamp(1.5em, 8vw, 4em);
+  font-size: clamp(1.3em, 8vw, 4em);
   margin-top: 20px;
   animation: bounce 1.5s infinite;
   text-shadow: 
@@ -41,7 +41,7 @@ h1 {
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 15px rgba(178,102,255,0.4);
-  font-size: clamp(1em, 4vw, 1.25em);
+  font-size: clamp(1.2em, 4vw, 1.25em);
   line-height: 1.5;
   max-width: 90%;
 }
@@ -289,6 +289,7 @@ const gifs=[
 "https://media.tenor.com/z0pgDo6jFxYAAAAi/borboletas-butterflies.gif",
 "https://media.tenor.com/U2JgCHsRh04AAAAi/butterfly-blue.gif",
 "https://media.tenor.com/PZQ4rP77gpgAAAAj/borboletas-butterfly.gif",
+  "https://media.tenor.com/U2JgCHsRh04AAAAi/butterfly-blue.gif",
 "https://media.tenor.com/U2JgCHsRh04AAAAj/butterfly-blue.gif",
 "https://media.tenor.com/1sxf4drjiDwAAAAj/borboletas-butterflies.gif"
 ];
@@ -315,11 +316,11 @@ function butterfly(){
  b.style.left=Math.random()*window.innerWidth+"px";
 
  /* 🌙 slow dreamy timing */
- let dur=14+Math.random()*10;
+ let dur=16+Math.random()*10;
  b.style.animationDuration=dur+"s, "+dur+"s";
 
  document.body.appendChild(b);
- setTimeout(()=>b.remove(),dur*1000);
+ setTimeout(()=>b.remove(),dur*1600);
 }
 
 /* 💜 CLUSTER AROUND MESSAGE */
@@ -344,7 +345,7 @@ function clusterButterflies() {
       b.style.animationDuration = dur + "s, " + dur + "s";
 
       document.body.appendChild(b);
-      setTimeout(() => b.remove(), dur * 1000);
+      setTimeout(() => b.remove(), dur * 1600);
     }, i * 200);
   }
 }
@@ -364,7 +365,7 @@ for(let i=0;i<5;i++){
 }
 
 /* 🦋 continuous gentle flow */
-setInterval(butterfly,3500);
+setInterval(butterfly,3000);
 
 </script>
 
