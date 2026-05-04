@@ -281,16 +281,18 @@ audio {
     0 0 40px rgba(255,255,255,0.6);
 }
   
-/* 🦋 special ending butterfly */
-.landing-butterfly {
-  position: fixed;
-  width: 80px;
+/* 🦋 cursor butterfly */
+.cursor-butterfly {
+  position: absolute;
+  width: 80px; /* tweak size here */
   pointer-events: none;
-  z-index: 10;
-  opacity: 0;
+  z-index: 20;
+
+  transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 12px rgba(200,160,255,0.9));
-  transition: transform 4s ease-in-out, opacity 2s ease;
-}  
+
+  transition: transform 0.2s ease;
+} 
 
 /* Last Note Effect */  
 .soft-shimmer {
@@ -553,59 +555,43 @@ if (magicLink) {
     createSparkle(e.pageX, e.pageY);
   });
 }
-  
 
-/* 🦋 final butterfly landing near closing note */
-function spawnEndingButterfly() {
-  const note = document.getElementById("closingNote");
-  if (!note) return;
+/* 🦋 CURSOR FOLLOW BUTTERFLY */
+let cursorButterfly = document.createElement("img");
 
-  const rect = note.getBoundingClientRect();
+cursorButterfly.src = "https://media.tenor.com/_UrVJngNL_kAAAAi/happy-funny.gif";
+cursorButterfly.className = "cursor-butterfly";
 
-  let b = document.createElement("img");
-  b.className = "landing-butterfly";
+document.body.appendChild(cursorButterfly);
 
-  // LANDING BUTTERFLY on last note
-  b.src = "https://media.tenor.com/_UrVJngNL_kAAAAi/happy-funny.gif";
+/* follow mouse smoothly */
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
 
-  // start position (bottom of screen)
-  b.style.left = (window.innerWidth / 2 + 100) + "px";
-  b.style.top = window.innerHeight + "px";
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+});
 
-  window.scrollTo(0, 0);
-  document.body.appendChild(b);
+/* smooth floating motion (lerp) */
+function animateButterfly() {
+  currentX += (mouseX - currentX) * 0.08;
+  currentY += (mouseY - currentY) * 0.08;
 
-  // force reflow so animation applies
-  b.getBoundingClientRect();
+  cursorButterfly.style.left = currentX + "px";
+  cursorButterfly.style.top = currentY + "px";
 
-  // final landing position near the text
-  const targetX = rect.left + rect.width / 2 + 40;
-  const targetY = rect.top - 40;
-
-  b.style.opacity = 1;
-  b.style.transform = `translate(${targetX - parseFloat(b.style.left)}px, ${targetY - parseFloat(b.style.top)}px)`;
-
-  // subtle idle float after landing
-  setTimeout(() => {
-    b.style.transition = "transform 3s ease-in-out";
-    b.style.transform += " translateY(-10px)";
-  }, 4000);
+  requestAnimationFrame(animateButterfly);
 }
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const note = document.getElementById("closingNote");
-    if (note) note.classList.add("show");
+animateButterfly();  
 
-    // 🦋 butterfly arrives shortly after
-    setTimeout(spawnEndingButterfly, 500);
-
-  }, 500);
-})
-  
   
 </script>
 
+  
 <img class="small-gif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmdtZ3B4anRvOXY4cWY0NXZ2OHg3OTRoOWxqOW82cXZkMDFnNGdhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Hv3tMENfOsQs63jvmG/giphy.gif">
 <img class="small-gif" src="https://media.tenor.com/zPN_b2vmT6AAAAAi/cute-cartoon.gif">
 <img class="small-gif" src="https://media.tenor.com/d2CnVOPfjN8AAAAi/cute-cartoon.gif">
