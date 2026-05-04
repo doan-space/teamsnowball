@@ -258,6 +258,29 @@ audio {
   100% { opacity: 0; }
 }
 
+/* ✨ magical hyperlink REASON To STAY*/
+.magic-link {
+  display: inline-block;
+  font-size: 1.1em;
+  color: #e6ccff;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.4s ease;
+
+  text-shadow:
+    0 0 6px rgba(178,102,255,0.6),
+    0 0 12px rgba(214,163,255,0.4);
+}
+
+/* 💫 hover = grow + float */
+.magic-link:hover {
+  transform: scale(1.25) translateY(-4px);
+  text-shadow:
+    0 0 10px rgba(178,102,255,0.9),
+    0 0 25px rgba(214,163,255,0.7),
+    0 0 40px rgba(255,255,255,0.6);
+}
+  
 /* 🦋 special ending butterfly */
 .landing-butterfly {
   position: fixed;
@@ -322,7 +345,7 @@ waiting for the moment you feel safe enough<br><br>
 to come back to her.<br><br>
   
 and just so you know…<br><br>
-that girl has a great voice, always has fun at karaoke nights, 🎤
+that girl has a great voice, always has fun at karaoke nights 🎤 <br><br>
 and can casually perform the entire cucumba song like it’s ancient scripture. Unsettling impressive<br><br>
 </div>
   
@@ -522,8 +545,16 @@ for(let i=0;i<5;i++){
 /* 🦋 continuous gentle flow */
 setInterval(butterfly,3000);
 
+  
+const magicLink = document.querySelector(".magic-link");
+if (magicLink) {
+  magicLink.addEventListener("mousemove", (e) => {
+    createSparkle(e.pageX, e.pageY);
+  });
+}
+  
 
-  /* 🦋 final butterfly landing near closing note */
+/* 🦋 final butterfly landing near closing note */
 function spawnEndingButterfly() {
   const note = document.getElementById("closingNote");
   if (!note) return;
@@ -577,7 +608,13 @@ window.addEventListener("load", () => {
 <img class="small-gif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmdtZ3B4anRvOXY4cWY0NXZ2OHg3OTRoOWxqOW82cXZkMDFnNGdhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Hv3tMENfOsQs63jvmG/giphy.gif">
 <img class="small-gif" src="https://media.tenor.com/zPN_b2vmT6AAAAAi/cute-cartoon.gif">
 <img class="small-gif" src="https://media.tenor.com/d2CnVOPfjN8AAAAi/cute-cartoon.gif">
-
+  
+/* A link to a daily letter from a stranger */
+<div style="margin-top: 20px;">
+  <a href="https://reasontostay.co.uk" target="_blank" class="magic-link">
+   💌 https://reasontostay.co.uk 💌
+  </a>
+</div>
   
   <!-- 🎵 MUSIC -->
 <div style="text-align: center; margin-top: 20px auto;">
