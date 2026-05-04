@@ -407,7 +407,7 @@ function createSparkle(x, y) {
 
 /* ✨ CURSOR */
 document.addEventListener("mousemove", e => {
-  createSparkle(e.clientX, e.clientY);
+  createSparkle(e.pageX, e.pageY);
 });
 
 /* ✨ TEXT SPARKLES */
@@ -556,6 +556,7 @@ if (magicLink) {
   });
 }
 
+
 /* 🦋 CURSOR FOLLOW BUTTERFLY */
 let cursorButterfly = document.createElement("img");
 
@@ -564,32 +565,29 @@ cursorButterfly.className = "cursor-butterfly";
 
 document.body.appendChild(cursorButterfly);
 
-/* follow mouse smoothly */
 let mouseX = 0;
 let mouseY = 0;
 let currentX = 0;
 let currentY = 0;
 
+/* 🐾 track mouse */
 document.addEventListener("mousemove", (e) => {
   mouseX = e.pageX;
   mouseY = e.pageY;
 });
 
-/* smooth floating motion (lerp) */
+/* 🌙 wandering motion */
 let wanderAngle = Math.random() * Math.PI * 2;
 
 function animateButterfly() {
-  // 🐾 follow (but not perfectly)
   currentX += (mouseX - currentX) * 0.05;
   currentY += (mouseY - currentY) * 0.05;
 
-  // 🌸 wandering motion
   wanderAngle += 0.03;
 
   const wanderX = Math.cos(wanderAngle) * 20;
   const wanderY = Math.sin(wanderAngle * 1.5) * 15;
 
-  // 🦋 final position with offset + wander
   const offsetX = 60;
   const offsetY = -40;
 
@@ -599,16 +597,7 @@ function animateButterfly() {
   requestAnimationFrame(animateButterfly);
 }
 
-  const offsetX = 60;  // move right (+) or left (-)
-  const offsetY = -40; // move up (-) or down (+)
-
-cursorButterfly.style.left = (currentX + offsetX) + "px";
-cursorButterfly.style.top = (currentY + offsetY) + "px";
-
-  requestAnimationFrame(animateButterfly);
-}
-
-animateButterfly();  
+animateButterfly();
 
   
 </script>
@@ -633,7 +622,7 @@ animateButterfly();
 </div>
 
 <!-- LAST NOTE -->  
-<div class="closing-note" id="closingNote" style="text-align: center; margin-top: 20px auto;>
+<div class="closing-note" id="closingNote" style="text-align: center; margin-top: 20px auto;">
   <span class="soft-shimmer">best experienced on a laptop for the full magic ✨ <br><br>
                               🦋 The butterflies insisted <br><br>
   </span>
