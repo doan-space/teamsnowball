@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Serena</title>
+<title>Happy Birthday, Serena</title>
 
 <style>
 body {
@@ -18,7 +18,7 @@ body {
 
 /* 🎉 TITLE */
 h1 {
-  font-size: clamp(1.2em, 8vw, 4em);
+  font-size: clamp(1.1em, 8vw, 4em);
   margin-top: 20px;
   animation: bounce 1.5s infinite;
   text-shadow: 
@@ -309,12 +309,42 @@ audio {
 }
 
   
+.gold-glitter {
+  font-size: 0.8em;
+  opacity: 0.85;
+
+  background: linear-gradient(
+    90deg,
+    #d4af37,
+    #fff6cc,
+    #ffd700,
+    #fff6cc,
+    #d4af37
+  );
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: goldShimmer 4s linear infinite;
+
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.4),
+    0 0 12px rgba(255,223,100,0.3);
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+  
+  
 </style>
 </head>
 
 <body>
 
-<h1>🎉🦋✨ Happy Birthday, Serena ✨🦋🎉</h1>
+<h1>🎉🦋✨ <span class="sparkle-text">Happy Birthday, Serena</span> ✨🦋🎉</h1>
 
 <div class="message">
 There’s something about you, soft and bright all at once.<br><br>
@@ -628,6 +658,14 @@ animateButterfly();
   </span>
 </div>
 
+<div style="margin-top: 40px; text-align: center; line-height: 1.6;">
+  <span class="gold-glitter">
+    This little corner of the internet was made just for you✨<br>
+    Hope you like your birthday gift<br>
+    — made by a proud member of your personal support club <br>
+    <i>(top tier. self-appointed. obviously)</i>
+  </span>
+</div>
   
 </body>
 </html>
