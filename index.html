@@ -59,6 +59,47 @@ h1 {
   100% { background-position: 200% center; }
 }
 
+  .glitter-text {
+  position: relative;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #d6a3ff,
+    0 0 15px #b266ff;
+}
+
+/* ✨ tiny moving sparkle overlay */
+.glitter-text::after {
+  content: "✦✧✦";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.6em;
+  color: #ffffff;
+  opacity: 0;
+  animation: glitterMove 1.8s infinite;
+  pointer-events: none;
+}
+
+@keyframes glitterMove {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
   
 /* Hidden MESSAGE */
 .message, .hidden-message {
@@ -252,6 +293,8 @@ audio {
 
 <div class="message">
 There’s something about you, soft and bright all at once.<br><br>
+You light up every room you walk into<br><br>
+.. and other times, you <span class="sparkle-text">kombucha in a wine glass</span> like you’re a guest on The Bachelor.<br><br>
 Here’s to you, your light, your heart, your beautiful way of being 💫<br><br>
 The world is so much brighter with you in it 🌟
 </div>
