@@ -18,7 +18,7 @@ body {
 
 /* 🎉 TITLE */
 h1 {
-  font-size: clamp(1.3em, 8vw, 4em);
+  font-size: clamp(1.2em, 8vw, 4em);
   margin-top: 20px;
   animation: bounce 1.5s infinite;
   text-shadow: 
@@ -33,6 +33,33 @@ h1 {
   50% { transform: translateY(-10px); }
 }
 
+.pawsome-line {
+  margin-top: 20px;
+  font-size: clamp(1.2em, 4vw, 1.4em);
+}
+
+/* ✨ shimmering word */
+.sparkle-text {
+  background: linear-gradient(
+    90deg,
+    #fff,
+    #d6a3ff,
+    #ffffff,
+    #b266ff,
+    #fff
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+  
 /* Hidden MESSAGE */
 .message, .hidden-message {
   margin: 12px auto;
@@ -45,7 +72,7 @@ h1 {
   line-height: 1.5;
   max-width: 90%;
 }
-
+  
 .hidden-message {
   display: none;
   margin-top: 15px;
@@ -155,6 +182,10 @@ Here’s to you, your light, your heart, your beautiful way of being 💫<br><br
 The world is so much brighter with you in it 🌟
 </div>
 
+<div class="pawsome-line">
+  Have a soft, sparkly, <span class="sparkle-text">pawsome</span> birthday 💜
+</div>
+  
 <img class="HBD" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3MzYzMzZ3dxd2Y2bDVkZHNwdHZnNGM5ZXkxdzB1NWFweDhtNHU5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NrN9hmYjAqOqRKf2m0/giphy.gif">
 
 <h2> and other times… you give chaotic, cute kitty gremlin energy 🐾 </h2>
@@ -165,7 +196,7 @@ The world is so much brighter with you in it 🌟
 <img class="small-gif" src="https://media1.tenor.com/m/ZgQqqIZjYpgAAAAd/penguin-fall.gif">
 <img class="gif" src="https://media.giphy.com/media/3o7528JmqtT7cwzV1S/giphy.gif">
 <img class="medium-gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmR5bmkzM2RwcnV6bXdva3JjMXVqaHJwaGxodms5bWJncnVlZHVxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vqMwxrSSVDDjuEupve/giphy.gif">
-
+<br><br>
 
 <div class="message-1" style="text-align: center; margin-top: 20px auto;">
 In case you ever feel a little lost… <br><br>
