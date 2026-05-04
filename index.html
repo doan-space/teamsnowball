@@ -220,7 +220,7 @@ audio {
 /* 🦋 special ending butterfly */
 .landing-butterfly {
   position: fixed;
-  width: 50px;
+  width: 100px;
   pointer-events: none;
   z-index: 10;
   opacity: 0;
@@ -337,7 +337,7 @@ function createSparkle(x, y) {
 
 /* ✨ CURSOR */
 document.addEventListener("mousemove", e => {
-  createSparkle(e.pageX, e.pageY);
+  createSparkle(e.clientX, e.clientY);
 });
 
 /* ✨ TEXT SPARKLES */
