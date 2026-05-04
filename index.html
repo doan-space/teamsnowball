@@ -84,20 +84,68 @@ h1 {
 
 /* Click Me BUTTON */
 .reveal-btn {
-  background: linear-gradient(145deg, #b266ff, #d6a3ff, #ffccff);
-  color: black;
-  padding: 14px 24px;
-  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(214,163,255,0.9), rgba(178,102,255,0.8), rgba(255,204,255,0.9));
+  color: #1a1a1a;
+
+  padding: 16px 28px;
+  border-radius: 30px;
+
   margin: 16px auto;
   display: inline-block;
+
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+
+  /* 🌌 cosmic glow */
+  box-shadow:
+    0 0 10px rgba(178,102,255,0.4),
+    0 0 25px rgba(214,163,255,0.25),
+    inset 0 0 10px rgba(255,255,255,0.4);
+
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+
+  position: relative;
+  overflow: hidden;
 }
 
+/* ✨ soft shine sweep */
+.reveal-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+/* ✨ hover effect */
 .reveal-btn:hover {
   transform: scale(1.05);
+  box-shadow:
+    0 0 15px rgba(178,102,255,0.6),
+    0 0 35px rgba(214,163,255,0.4),
+    inset 0 0 12px rgba(255,255,255,0.5);
 }
+
+/* ✨ animate shine */
+.reveal-btn:hover::before {
+  animation: shine 1.2s ease;
+}
+
+@keyframes shine {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
 
 /* 🎵 AUDIO */
 audio {
@@ -473,7 +521,7 @@ window.addEventListener("load", () => {
     if (note) note.classList.add("show");
 
     // 🦋 butterfly arrives shortly after
-    setTimeout(spawnEndingButterfly, 1500);
+    setTimeout(spawnEndingButterfly, 500);
 
   }, 6000);
 })
@@ -481,6 +529,10 @@ window.addEventListener("load", () => {
   
 </script>
 
+<img class="small-gif" src="https://media.tenor.com/zPN_b2vmT6AAAAAi/cute-cartoon.gif">
+<img class="small-gif" src="https://media.tenor.com/d2CnVOPfjN8AAAAi/cute-cartoon.gif">
+
+  
   <!-- 🎵 MUSIC -->
 <div style="text-align: center; margin-top: 20px auto;">
 <audio id="song" controls>
@@ -489,7 +541,9 @@ window.addEventListener("load", () => {
 </div>
   
 <div class="closing-note" id="closingNote">
-  <span class="soft-shimmer">best experienced on a laptop for the full magic ✨🦋 The butterflies insisted</span>
+  <span class="soft-shimmer">best experienced on a laptop for the full magic ✨ <br><br>
+                              🦋 The butterflies insisted <br><br>
+  </span>
 </div>
 
   
