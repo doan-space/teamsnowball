@@ -576,12 +576,34 @@ document.addEventListener("mousemove", (e) => {
 });
 
 /* smooth floating motion (lerp) */
-function animateButterfly() {
-  currentX += (mouseX - currentX) * 0.08;
-  currentY += (mouseY - currentY) * 0.08;
+let wanderAngle = Math.random() * Math.PI * 2;
 
-  cursorButterfly.style.left = currentX + "px";
-  cursorButterfly.style.top = currentY + "px";
+function animateButterfly() {
+  // 🐾 follow (but not perfectly)
+  currentX += (mouseX - currentX) * 0.05;
+  currentY += (mouseY - currentY) * 0.05;
+
+  // 🌸 wandering motion
+  wanderAngle += 0.03;
+
+  const wanderX = Math.cos(wanderAngle) * 20;
+  const wanderY = Math.sin(wanderAngle * 1.5) * 15;
+
+  // 🦋 final position with offset + wander
+  const offsetX = 60;
+  const offsetY = -40;
+
+  cursorButterfly.style.left = (currentX + offsetX + wanderX) + "px";
+  cursorButterfly.style.top = (currentY + offsetY + wanderY) + "px";
+
+  requestAnimationFrame(animateButterfly);
+}
+
+  const offsetX = 60;  // move right (+) or left (-)
+  const offsetY = -40; // move up (-) or down (+)
+
+cursorButterfly.style.left = (currentX + offsetX) + "px";
+cursorButterfly.style.top = (currentY + offsetY) + "px";
 
   requestAnimationFrame(animateButterfly);
 }
