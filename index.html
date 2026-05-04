@@ -172,7 +172,7 @@ audio {
 /* 🦋 special ending butterfly */
 .landing-butterfly {
   position: fixed;
-  width: 70px;
+  width: 50px;
   pointer-events: none;
   z-index: 10;
   opacity: 0;
@@ -180,7 +180,21 @@ audio {
   transition: transform 4s ease-in-out, opacity 2s ease;
 }  
 
+/* Last Note */  
+.soft-shimmer {
+  background: linear-gradient(90deg, #e6ccff, #ffffff, #d6a3ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
 
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+  
 </style>
 </head>
 
@@ -475,7 +489,7 @@ window.addEventListener("load", () => {
 </div>
   
 <div class="closing-note" id="closingNote">
-  (best experienced on a laptop for the full magic ✨ — the butterflies insisted)
+  <span class="soft-shimmer">best experienced on a laptop for the full magic ✨🦋 The butterflies insisted</span>
 </div>
 
   
