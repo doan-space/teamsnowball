@@ -407,7 +407,7 @@ function createSparkle(x, y) {
 
 /* ✨ CURSOR */
 document.addEventListener("mousemove", e => {
-  createSparkle(e.pageX, e.pageY);
+  createSparkle(e.clientX, e.clientY);
 });
 
 /* ✨ TEXT SPARKLES */
