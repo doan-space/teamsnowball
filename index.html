@@ -169,6 +169,18 @@ audio {
   100% { opacity: 0; }
 }
 
+/* 🦋 special ending butterfly */
+.landing-butterfly {
+  position: fixed;
+  width: 70px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  filter: drop-shadow(0 0 12px rgba(200,160,255,0.9));
+  transition: transform 4s ease-in-out, opacity 2s ease;
+}  
+
+
 </style>
 </head>
 
@@ -183,7 +195,7 @@ The world is so much brighter with you in it 🌟
 </div>
 
 <div class="pawsome-line">
-  Have a soft, sparkly, <span class="sparkle-text">pawsome</span> birthday 💜
+  Have a soft, sparkly, <span class="sparkle-text">pawsome</span> birthday 💜 <br><br>
 </div>
   
 <img class="HBD" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3MzYzMzZ3dxd2Y2bDVkZHNwdHZnNGM5ZXkxdzB1NWFweDhtNHU5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NrN9hmYjAqOqRKf2m0/giphy.gif">
@@ -404,6 +416,55 @@ for(let i=0;i<5;i++){
 /* 🦋 continuous gentle flow */
 setInterval(butterfly,3000);
 
+
+  /* 🦋 final butterfly landing near closing note */
+function spawnEndingButterfly() {
+  const note = document.getElementById("closingNote");
+  if (!note) return;
+
+  const rect = note.getBoundingClientRect();
+
+  let b = document.createElement("img");
+  b.className = "landing-butterfly";
+
+  // use your PNG butterfly (centerpiece feel)
+  b.src = "butterfly-1.png";
+
+  // start position (bottom of screen)
+  b.style.left = (window.innerWidth / 2 + 100) + "px";
+  b.style.top = window.innerHeight + "px";
+
+  document.body.appendChild(b);
+
+  // force reflow so animation applies
+  b.getBoundingClientRect();
+
+  // final landing position near the text
+  const targetX = rect.left + rect.width / 2 + 40;
+  const targetY = rect.top - 40;
+
+  b.style.opacity = 1;
+  b.style.transform = `translate(${targetX - parseFloat(b.style.left)}px, ${targetY - parseFloat(b.style.top)}px)`;
+
+  // subtle idle float after landing
+  setTimeout(() => {
+    b.style.transition = "transform 3s ease-in-out";
+    b.style.transform += " translateY(-10px)";
+  }, 4000);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const note = document.getElementById("closingNote");
+    if (note) note.classList.add("show");
+
+    // 🦋 butterfly arrives shortly after
+    setTimeout(spawnEndingButterfly, 1500);
+
+  }, 6000);
+})
+  
+  
 </script>
 
   <!-- 🎵 MUSIC -->
@@ -413,6 +474,10 @@ setInterval(butterfly,3000);
 </audio>
 </div>
   
+<div class="closing-note" id="closingNote">
+  (best experienced on a laptop for the full magic ✨ — the butterflies insisted)
+</div>
 
+  
 </body>
 </html>
