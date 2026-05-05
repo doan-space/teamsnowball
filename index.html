@@ -311,6 +311,36 @@ audio {
   transition: transform 0.2s ease;
 } 
 
+/* EASTER EGG > cute hidden star */
+.star-gif {
+  position: absolute;
+  left: -65px;   /* 👈 sits left of player */
+  bottom: 5px;
+
+  width: 50px;
+
+  opacity: 0;
+  transform: scale(0.8);
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  pointer-events: none;
+
+  animation: starFloat 3s ease-in-out infinite;
+}
+
+/* ✨ reveal on hover */
+.music-area:hover .star-gif {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes starFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+  
 /* Last Note Effect */  
 .soft-shimmer {
   background: linear-gradient(90deg, #e6ccff, #ffffff, #d6a3ff);
@@ -666,10 +696,17 @@ animateButterfly();
 </div> 
   
 <!-- 🎵 MUSIC -->
-<div style="text-align: center; margin-top: 20px auto;">
-<audio id="song" controls>
-  <source src="https://github.com/doan-space/teamsnowball/blob/2fb12792d4ae91ff0bea4ad4c5f167009926fe5a/snowball-effect.mp3?raw=true" type="audio/mpeg">
-</audio>
+<div class="music-area" style="text-align: center; margin: 20px auto; position: relative; width: fit-content;">
+  
+  <!-- ⭐ hidden star -->
+  <img 
+    class="star-gif" 
+    src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTV4Zjd3cDZnOWViZzEydXF5YW5wMzBjaGI3Y2d6NTM4Mmhvbm91YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/W9eEjLiTTilTv2wWYu/giphy.gif">
+
+  <audio id="song" controls>
+    <source src="https://github.com/doan-space/teamsnowball/blob/2fb12792d4ae91ff0bea4ad4c5f167009926fe5a/snowball-effect.mp3?raw=true" type="audio/mpeg">
+  </audio>
+
 </div>
 
 <!-- LAST NOTE -->  
