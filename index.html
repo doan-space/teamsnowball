@@ -312,23 +312,23 @@ audio {
 
 /* EASTER EGG > cute hidden star */
 .star-gif {
-  position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%) scale(5); /* 👈 main size control */
-  width: 40px; /* keep base stable */
-  opacity: 1;
- /* transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none; /
-  animation: starFloat 3s ease-in-out infinite; */
+  opacity: 0;
+  transform: translate(-50%, -10px) scale(0.25);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+  
+/* ✨ hidden star appears when cursor near music player */
+.music-area .star-gif {
+  opacity: 0;
+  transform: translate(-50%, -10px) scale(0.2);
+  transition: all 0.4s cubic-bezier(.2,.8,.2,1);
 }
 
-/* ✨ reveal on hover */
-.music-area:hover .star-gif {
+.music-area.active .star-gif {
   opacity: 1;
-  transform: scale(1);
+  transform: translate(-50%, -18px) scale(0.32);
 }
-
 @keyframes starFloat {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -674,6 +674,16 @@ function animateButterfly() {
 
 animateButterfly();
 
+/* ⭐ MUSIC AREA STAR TRIGGER */
+const musicArea = document.querySelector(".music-area");
+
+musicArea.addEventListener("mouseenter", () => {
+  musicArea.classList.add("active");
+});
+
+musicArea.addEventListener("mouseleave", () => {
+  musicArea.classList.remove("active");
+});
   
 </script>
 
