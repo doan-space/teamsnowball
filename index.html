@@ -21,7 +21,7 @@ h1 {
   font-size: clamp(1.1em, 8vw, 4em);
   margin-top: 20px;
   animation: bounce 1.5s infinite;
-  order-radius: 18px;
+  border-radius: 18px;
   backdrop-filter: blur(10px);
   text-shadow: 
     0 0 5px #d6a3ff,
@@ -204,10 +204,10 @@ h1 {
   100% { left: 120%; }
 }
 
-
+/* Music Player */
 audio {
   display: block;
-  width: 100%;        /* 👈 fill the wrapper */
+  width: 90%;        /* 👈 fill the wrapper */
   max-width: 400px;   /* keep nice size */
   margin: 0 auto;     /* remove big vertical spacing */
   border-radius: 25px;
@@ -695,7 +695,7 @@ animateButterfly();
 </div> 
   
 <!-- 🎵 MUSIC -->
-<div class="music-area" style="text-align: center; margin: 40px auto; position: relative; display: inline-block;">
+<div class="music-area" style="text-align: center; margin: 40px auto; position: relative; display: block;">
   
   <!-- ⭐ cute hidden star -->
   <img 
