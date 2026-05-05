@@ -102,6 +102,20 @@ h1 {
   }
 }
   
+/* SLANTED effect */
+.slant-text {
+  display: inline-block;
+  transition: transform 0.35s ease, text-shadow 0.35s ease;
+}
+
+.slant-text:hover {
+  transform: skewX(-10deg) rotate(-2deg) scale(1.05);
+  text-shadow:
+    0 0 10px rgba(214,163,255,0.6),
+    0 0 20px rgba(178,102,255,0.4);
+}
+
+  
 /* Hidden MESSAGE */
 .message, .hidden-message {
   margin: 12px auto;
@@ -345,7 +359,7 @@ audio {
 
 <body>
 
-<h1>🎉🦋✨ <span class="sparkle-text">Happy Birthday, Serena</span> ✨🦋🎉</h1>
+<h1>🎉🦋✨ <span class="soft-shimmer">Happy Birthday, Serena</span> ✨🦋🎉</h1>
 
 <div class="message">
 There’s something about you, soft and bright all at once.<br><br>
@@ -360,7 +374,9 @@ Here’s to you, your light, your heart, your beautiful way of being 💫
   
 <img class="HBD" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3MzYzMzZ3dxd2Y2bDVkZHNwdHZnNGM5ZXkxdzB1NWFweDhtNHU5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NrN9hmYjAqOqRKf2m0/giphy.gif">
 
-<h2> other times… you give chaotic, cute kitty gremlin energy 🐾 </h2>
+<div class="slant-text">
+  other times… you give chaotic, cute kitty gremlin energy 🐾
+</div>
 
 <img class="small-gif" src="https://media.tenor.com/Wsg-Kz8w24gAAAAi/frugitofficial-frugit.gif">
 <img class="medium-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXg5cWlidjhheDZraDdhbzExNmM0M2RzN2o5ZTQ1ZGw4NHU4ZzA3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h6AMD4GXFxO2k/giphy.gif">
@@ -370,16 +386,17 @@ Here’s to you, your light, your heart, your beautiful way of being 💫
 <br><br>
 
 <div class="message-1" style="text-align: center; margin: 20px auto;">
-In case you ever feel a little lost…<br><br>
-trust that the part of you that still feels like yourself hasn’t gone anywhere.<br><br>
-quiet, patient,<br><br>
-waiting for the moment you feel safe enough<br><br>
-to come back to her.<br><br>
+In case you ever feel a little lost…<br>
+trust that the part of you that still feels like yourself hasn’t gone anywhere.<br>
+quiet, patient,<br>
+waiting for the moment you feel safe enough<br>
+to come back to her.<br>
   
 <img class="small-gif" src="https://media1.tenor.com/m/ZgQqqIZjYpgAAAAd/penguin-fall.gif">  
   
-and...<br><br>
-that girl has a great voice, always has fun at karaoke nights 🎤 <br><br>
+<br>
+and...<br>
+that girl has a great voice, always has fun at karaoke nights 🎤 <br>
 and can casually perform the entire cucumba song like it’s ancient scripture.<br>
 <i>...unsettlingly impressive</i><br><br>
 </div>
@@ -656,7 +673,7 @@ animateButterfly();
 <!-- LAST NOTE -->  
 <div class="closing-note" id="closingNote" style="text-align: center; margin-top: 20px auto;">
   <span class="soft-shimmer">best experienced on a laptop for the full magic ✨ <br><br>
-                              🦋 The butterflies insisted <br><br>
+                              🦋 The butterflies insisted 🦋<br><br>
   </span>
 </div>
 
