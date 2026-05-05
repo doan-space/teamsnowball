@@ -312,9 +312,13 @@ audio {
 
 /* EASTER EGG > cute hidden star */
 .star-gif {
-  
-  opacity: 1;
-
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.6); /* 👈 main size control */
+  width: 40px; /* keep base stable */
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
   animation: starFloat 3s ease-in-out infinite;
 }
@@ -706,10 +710,11 @@ animateButterfly();
   </span>
 </div>
 
-<img src="Yhttps://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTN1Mm4zdmU4N2dua3UzdGt6d2dzMGRmemxtZDFiYXVoa2cxM25wcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UvTIyxzLcfjZ19gT8i/giphy.gif" style="width: 10px; height: auto; display: block; margin: 10px auto;">
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWUyajI5dnljZHd3YmIyOWV0YnJnN21sdnNlc3N2NG8zeHRycmVybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ib1TGcmkY5PCo5xm4t/giphy.gif" style="width: 60px; height: auto; display: block; margin: 10px auto;">
+<img src="Yhttps://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTN1Mm4zdmU4N2dua3UzdGt6d2dzMGRmemxtZDFiYXVoa2cxM25wcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UvTIyxzLcfjZ19gT8i/giphy.gif" style="width: 10px; height: auto; display: block; margin: 50px auto;">
+
   
 <div style="margin-top: 40px; text-align: center; line-height: 1.6;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWUyajI5dnljZHd3YmIyOWV0YnJnN21sdnNlc3N2NG8zeHRycmVybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ib1TGcmkY5PCo5xm4t/giphy.gif" style="width: 60px; height: auto; display: block; margin: 20px auto;">
   <span class="gold-glitter">
     This little corner of the internet was made just for you✨<br>
     Hope you like your birthday gift<br>
