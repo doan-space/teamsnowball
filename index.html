@@ -312,8 +312,14 @@ audio {
 
 /* EASTER EGG > cute hidden star */
 .star-gif {
-  opacity: 1 !important;
-
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.2); /* main size control */
+  width: 40px; /* keep base stable */
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
   animation: starFloat 3s ease-in-out infinite;
 }
 
