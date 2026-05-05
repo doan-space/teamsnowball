@@ -312,26 +312,25 @@ audio {
 
 /* EASTER EGG > cute hidden star */
 .star-gif {
+  position: absolute;
+
+  left: 18px;        /* 👈 adjust horizontal “seat” */
+  top: -12px;        /* 👈 sits on top edge */
+
+  width: 300px;       /* keep it small */
+  height: auto;
+
   opacity: 0;
-  transform: translate(-50%, -10px) scale(4);
+  transform: scale(0.85);
+
   transition: opacity 0.25s ease, transform 0.25s ease;
+
   pointer-events: none;
 }
   
-/* ✨ hidden star appears when cursor near music player */
-.music-area .star-gif {
-  opacity: 1;
-  transform: translate(-50%, -10px) scale(0.2);
-  transition: all 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-.music-area.active .star-gif {
-  opacity: 1;
-  transform: translate(-50%, -18px) scale(4);
-}
-@keyframes starFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.music-area {
+  position: relative;
+  display: inline-block;
 }
 
   
