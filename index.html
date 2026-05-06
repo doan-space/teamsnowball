@@ -313,29 +313,39 @@ audio {
 /* EASTER EGG > cute hidden star */
 .star-gif {
   position: absolute;
+  left: 50%;
+  top: -80px;  /* 👈 to change vertical position */
 
-  left: 18px;        /* 👈 adjust horizontal “seat” */
-  top: -12px;        /* 👈 sits on top edge */
+  transform: translateX(-50%) scale(0.8);
 
-  width: 300px;       /* keep it small */
-  height: auto;
-
+  width: 200px;   /* 👈 smaller = easier to position */
   opacity: 0;
-  transform: scale(0.85);
 
-  transition: opacity 0.25s ease, transform 0.25s ease;
-
+  transition: all 0.3s ease;
   pointer-events: none;
 }
 
-.music-area:hover .star-gif {
-  opacity: 1;
-  transform: scale(1);
+
+.star-zone {
+  position: absolute;
+  top: -20px;   /* 👈 move hover area ABOVE player up or down */
+  left: -100px;
+  width: calc(200% + 100px);
+  height: 300px;
 }
-  
+
+.star-zone:hover ~ .star-gif {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+
 .music-area {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 60px auto;
 }
 
   
@@ -676,6 +686,7 @@ function animateButterfly() {
   requestAnimationFrame(animateButterfly);
 }
 
+animateButterfly();
 
   
 </script>
@@ -693,7 +704,11 @@ function animateButterfly() {
 </div> 
   
 <!-- 🎵 MUSIC -->
-<div class="music-area" style="text-align: center; margin: 40px auto; position: relative; display: block;">
+
+  <div class="music-area">
+
+  <!-- 👇 invisible hover zone -->
+  <div class="star-zone"></div>
   
   <!-- ⭐ cute hidden star -->
   <img 
