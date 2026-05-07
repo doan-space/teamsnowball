@@ -7,7 +7,7 @@
 
 <style>
 body {
-  margin: 0;
+  margin: 5;
   font-family: "Comic Sans MS", "Brush Script MT";
   background: linear-gradient(135deg, #000000, #0d1b2a, #1b263b, #6a0dad);
   color: #ffffff;
@@ -16,6 +16,11 @@ body {
   padding-bottom: 40px;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+  
 /* 🎉 TITLE */
 h1 {
   font-size: clamp(1.1em, 8vw, 4em);
@@ -228,7 +233,7 @@ audio {
 }
 
 .medium-gif {
-  width: 160%;
+  width: 100%;
   max-width: 300px;
   display: block;
   margin: 10px auto;
@@ -248,7 +253,8 @@ audio {
 
 /* base layer */
 .base-gif {
-  width: 150%;
+  width: 100%;
+  transform: scale(1.2);
   display: block;
   border-radius: 80%;
   overflow: hidden;
@@ -361,9 +367,8 @@ audio {
 .star-zone {
   position: absolute;
   top: -20px;   /* 👈 move hover area ABOVE player up or down */
-  left: -100px;
-  width: calc(200% + 100px);
-  height: 300px;
+  left: 0px;
+  width: 100%;
 }
 
 .star-zone:hover ~ .star-gif {
